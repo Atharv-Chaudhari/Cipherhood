@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.jpg">
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script src="style/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Cipherhood</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <script>
+        $(document).ready(function(){
+            $('input[type="radio"]').click(function(){
+            var inputValue = $(this).attr("value");
+            var targetBox = $("." + inputValue);
+            $(".radio-box").not(targetBox).hide();
+            $(targetBox).show();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="basic_play">
+        <!-- ****************************************************************************************************** -->
+    
+        <div class="title-block">
+            <img src="img/wel3.gif" width="100" height="70">
+            <h1 class="title">&#160&#160✨ <span class="color-title">Welcome to Project Cipherhood</span> ✨&#160&#160</h1>
+            <img src="img/wel4.gif" width="100" height="50">
+        </div>
+        <br>
+        <!-- """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" -->
+    
+        <div class="block-radios">
+            <label for="affine" class="btn-radio">
+                <input type="radio"  id="affine" pys-onClick="affine" value="Affine" name="radio">
+                <svg width="20px" height="22px" viewBox="0 0 25 15">
+                    <circle cx="10" cy="10" r="10"></circle>
+                    <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                    <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                </svg>
+                <span>&#160Affine Cipher</span>
+            </label>
+            <br>
+            <label for="caesar" class="btn-radio">
+            <input type="radio"  id="caesar" pys-onClick="caesar" value="Caesar" name="radio">
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160Caesar Cipher</span></label><br>
+            <label for="columnar" class="btn-radio">
+            <input type="radio"  id="columnar" pys-onClick="columnar" value="Columnar" name="radio">
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160Columnar Cipher</span></label><br>
+            <label for="substitution" class="btn-radio">
+            <input type="radio"  id="substitution" pys-onClick="substitution" value="substitution" name="radio">
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160Substitution Cipher</span></label><br>
+            <label for="otp" class="btn-radio">
+            <input type="radio"  id="otp" value="otp" name="radio">
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160OTP Cipher</span></label><br>
+            <label for="play_fair" class="btn-radio">
+                <input type="radio"  id="play_fair" pys-onClick="play_fair" value="play_fair" name="radio">
+            <!-- <input type="radio"  id="play_fair" pys-onClick="play_fair" onclick="click_hidden('hide_me_play_fair')" value="play_fair" name="radio"> -->
+            <!-- <input type="button" style="display: none;" id="hide_me_play_fair" pys-onClick="en_play_fair"> -->
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160Play Fair Cipher</span></label><br>
+            <label for="Rail_Fence" class="btn-radio">
+            <input type="radio"  id="Rail_Fence" pys-onClick="Rail_Fence" value="Rail_Fence" name="radio">
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160Rail Fence Cipher</span></label><br>
+            <label for="vigenere" class="btn-radio">
+            <input type="radio"  id="vigenere" pys-onClick="vigenere" value="vigenere" name="radio">
+            <svg width="20px" height="22px" viewBox="0 0 25 15">
+                <circle cx="10" cy="10" r="10"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+            </svg>
+            <span>&#160Vigenere Cipher</span></label><br>
+        </div>
+    
+        <!-- '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' -->
+    
+        <div class="Affine radio-box">
+            <br>
+            <form class="flex-it">
+                <div style="display:inline-flex;">
+                    <label>🚀 a&#160</label>
+                    <input type="range" id="affineaInput" name="affineaInput" min="1" max="25" step="2" value="17" pys-onClick="affine" oninput="this.form.affineaoutput.value = this.value;click_it('affineaInput');" onclick="validate_affine_a(this.value,0);">
+                    <input class="text-center" type="number" id="affineaoutput" name="affineaoutput" min="1" max="25" step="2" value="17" oninput="this.form.affineaInput.value=this.value;click_it('affineaInput');valid_it(this.value,'a','0','25');validate_affine_a(this.value,1);">
+                </div>
+                <div style="display:inline-flex;">
+                    <label>🚀 b&#160</label>
+                    <input type="range" id="affinebInput" name="affinebInput" min="1" max="25" step="1" value="20" pys-onClick="affine" oninput="this.form.affineboutput.value = this.value;click_it('affinebInput');">
+                    <input class="text-center" type="number" id="affineboutput" name="affineboutput" min="1" max="25" step="1" value="20" oninput="this.form.affinebInput.value=this.value;click_it('affinebInput');valid_it(this.value,'b','0','25')">
+                </div>
+            </form>
+        </div>
+        <div class="Caesar radio-box">
+            <br>
+            <form class="flex-it">
+                <div style="display:inline-flex;">
+                    <label>🚀 a&#160</label>
+                    <input type="range" id="caesaraInput" name="caesaraInput" min="1" max="25" step="1" value="4" pys-onClick="caesar" oninput="this.form.caesaraoutput.value = this.value;click_it('caesaraInput');">
+                    <input class="text-center" type="number" id="caesaraoutput" name="caesaraoutput" min="1" max="25" step="1" value="4" oninput="this.form.caesaraInput.value=this.value;click_it('caesaraInput');valid_it(this.value,'a','0','25')"/>
+                </div>
+            </form>
+        </div>
+        <div class="Columnar radio-box">
+            <br>
+            <form>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Key for Coulmnar Cipher</label>
+                    <input type="text" class="form__field text-center" id="columnar_key" oninput="check_dup(this.form.columnar_key.value);" value="hack">
+                    <input type="button" class="button-63" value="Submit" onclick="click_it('columnar');alertsucc('columnar_key');check_dup(this.form.columnar_key.value);">
+                </div>
+                <br>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Length of Key</label>
+                    <input min="1" max="26" class="form__field text-center makemebig" type="number" id="columnar_key_l" value="4">
+                    <input type="button" class="button-54" onclick="this.form.columnar_key.value=genrandom(this.form.columnar_key_l.value);click_it('columnar');alertmsg('columnar_key_l',1,26);" value="Generate Random Key">
+                </div>
+            </form>
+        </div>
+    
+        <div class="play_fair radio-box">
+            <br>
+            <form>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Key for Play Fair Cipher</label>
+                    <input type="text" class="form__field text-center" id="play_fair_key" oninput="check_dup(this.form.play_fair_key.value);" value="key">
+                    <input type="button" class="button-63" value="Submit" onclick="click_it('play_fair');alertsucc('play_fair_key');check_dup(this.form.play_fair_key.value);">
+                </div>
+                <br>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Length of Key</label>
+                    <input min="1" max="26" class="form__field text-center makemebig" type="number" id="play_fair_key_l" value="3">
+                    <input type="button" class="button-54" onclick="this.form.play_fair_key.value=genrandom(this.form.play_fair_key_l.value);click_it('play_fair');alertmsg('play_fair_key_l',1,26);" value="Generate Random Key">
+                </div>
+            </form>
+        </div>
+    
+        <div class="Rail_Fence radio-box">
+            <br>
+            <form class="flex-it">
+                <div style="display:inline-flex;">
+                    <label>🚀 Rails&#160</label>
+                    <input type="range" id="Rail_FenceInput" name="Rail_FenceInput" min="2" max="100" step="1" value="3" pys-onClick="Rail_Fence" oninput="this.form.Rail_Fenceoutput.value = this.value;click_it('Rail_FenceInput');">
+                    <input class="text-center" type="number" id="Rail_Fenceoutput" name="Rail_Fenceoutput" min="2" max="100" step="1" value="3" oninput="this.form.Rail_FenceInput.value=this.value;click_it('Rail_FenceInput');check_negative(this.value);">
+                </div>
+            </form>
+        </div>
+    
+        <div class="vigenere radio-box">
+            <br>
+            <form>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Key for Vigenere Cipher</label>
+                    <input type="text" class="form__field text-center" id="vigenere_key" value="leg">
+                    <input type="button" class="button-63" value="Submit" onclick="click_it('vigenere');alertsucc('vigenere_key');">
+                </div>
+                <br>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Length of Key</label>
+                    <input min="1" max="26" class="form__field text-center makemebig" type="number" id="vigenere_key_l" value="3">
+                    <input type="button" class="button-54" onclick="this.form.vigenere_key.value=anyrand(this.form.vigenere_key_l.value);click_it('vigenere');alertmsg('vigenere_key_l',1,1000);" value="Generate Random Key">
+                </div>
+            </form>
+        </div>
+        
+        <div class="otp radio-box">
+            <br>
+            <input type="button" style="display: none;" id="otp2" pys-onClick="otp">
+            <form>
+                <div class="flex-it">
+                    <label style="padding: 8px 12px;">🚀 Key for OTP Cipher</label>
+                    <input type="text" class="form__field text-center" id="otp_key" value="XMCKL">
+                    <input type="button" class="button-63" value="Submit" onclick="click_it('otp2');alertotpsucc('otp_key');">
+                </div>
+                <br>
+                <div class="flex-it">
+                    <input type="button" class="button-54" onclick="this.form.otp_key.value=decide_otp();click_it('otp2');" value="Generate Random Key">
+                </div>
+            </form>
+        </div>
+    
+        <!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;' -->
+    
+        <br>
+        <div class="switch-it">
+            <label for="toggle">
+                <input class="input" id="toggle" type="checkbox" onclick="checkbox_toggle();"/>
+                <div class="toggle-wrapper"><span class="selector"></span></div>
+                <p class="notification"><span style="font-size:23px;">⛄</span> Mode of Operation 🔦 🔰 <span class="selected color-itman"></span></p>
+            </label>
+        </div>
+        <br><br>
+    
+        <!-- ---------------------------------------------------------------------------------------------------- -->
+    
+        <div class="input-blocks make-center1" id="display-block1">
+            <div class="sub-block">
+                <div class="mini-blocks">
+                    <img src="img/down.gif" width="80" height="50">
+                    <h2 class="sub-title org">&#160&#160Original Text&#160&#160</h2>
+                    <img src="img/book.png" width="60" height="20">
+                </div>
+                <textarea class="shadow" type="text" placeholder="Enter Original Text Here..." id="input-text" cols="50"></textarea>
+            </div>
+            <div class="sub-block">
+                <div class="mini-blocks">
+                    <img src="img/succ.gif" width="80" height="50">
+                    <h2 class="sub-title enc">&#160&#160Encrypted Text&#160&#160</h2>
+                    <img src="img/tbook.png" width="60" height="20">
+                </div>
+                <textarea class="shadow" type="text" placeholder="Enter Encrypted Text Here..." id="encrypted-text" cols="50"></textarea>
+            </div>
+            <div class="sub-block">
+                <div class="mini-blocks">
+                    <img src="img/succ.gif" width="80" height="50">
+                    <h2 class="sub-title dec">&#160&#160Decrypted Text&#160&#160</h2>
+                    <img src="img/book.png" width="60" height="20">
+                </div>
+                <textarea class="shadow" type="text" placeholder="Decrypted Text Will Be Visible Here..." id="output-text" cols="50"></textarea>
+            </div>
+        </div>
+        
+        <!-- ----------------------------------------------------------------------------------------------- -->
+    
+        <div class="input-blocks make-center2" id="display-block2">
+            <div class="sub-block">
+                <div class="mini-blocks">
+                    <img src="img/down.gif" width="80" height="50">
+                    <h2 class="sub-title enc">&#160&#160Encrypted Text&#160&#160</h2>
+                    <img src="img/tbook.png" width="60" height="20">
+                </div>
+                <textarea class="shadow" type="text" placeholder="Enter Encrypted Text Here..." id="encrypted-text2" cols="50"></textarea>
+            </div>
+            <div class="sub-block">
+                <div class="mini-blocks">
+                    <img src="img/succ.gif" width="80" height="50">
+                    <h2 class="sub-title dec">&#160&#160Decrypted Text&#160&#160</h2>
+                    <img src="img/book.png" width="60" height="20">
+                </div>
+                <textarea class="shadow" type="text" placeholder="Decrypted Text Will Be Visible Here..." id="output-text2" cols="50"></textarea>
+            </div>
+        </div>
+    
+        <!-- ================================================================================================== -->
+
+        <!-- <div class="button-container">
+            <div class="glass-btn blue-btn">
+              <img src="https://i.postimg.cc/DwbWDQTx/facebook.png" alt="facebook" style="width: 5.5em;">
+            </div>
+            <div class="glass-btn red-btn">
+              <img src="https://i.postimg.cc/LstJ4Hhf/youtube.png" alt="youtube" style="width: 6em;">
+            </div>
+            <div class="glass-btn amber-btn">
+              <img src="https://i.postimg.cc/tgQ1H1Rp/soundcloud.png" alt="soundcloud" style="width: 6em;">
+            </div>
+          </div>
+        <br><br> -->
+
+        <div class="socialbar">
+            <ul>
+              <!-- <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li> -->
+              <li><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <br>
+
+        <!-- ================================================================================================= -->
+    
+        <div style="display: flex;justify-content: center;">
+            <div class="doc">
+                <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                </ul>
+            </div>
+            <div class="doc">
+                <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                </ul>
+            </div>
+            <h1 style="text-align: center;font-size: 20px;padding-top: 3px;">🔰 © Copyright, Cipherhood 🔰</h1>
+            <div class="doc">
+                <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                </ul>
+            </div>
+            <div class="doc">
+                <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+    </div>    
+
+    <!-- ------------------------------------------------------------------------------------------------ -->
+
+    <py-env>
+    - numpy
+    </py-env>
+
+    <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+    <py-script src="/pycodes/affine.py"></py-script>
+    <py-script src="/pycodes/caesar.py"></py-script>
+    <py-script src="/pycodes/columnar.py"></py-script>
+    <py-script src="/pycodes/substitution.py"></py-script>
+    <py-script src="/pycodes/otp.py"></py-script>
+    <py-script src="/pycodes/play_fair.py"></py-script>
+    <py-script src="/pycodes/Rail_Fence.py"></py-script>
+    <py-script src="/pycodes/vigenere.py"></py-script>
+
+    <!-- ============================================================================================ -->
+
+    <py-script>
+        
+        import js
+        def affine(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    a_value=Element("affineaInput").value
+                    a_ovalue=Element("affineaoutput").value
+                    b_value=Element("affinebInput").value
+                    b_ovalue=Element("affineboutput").value
+                    if((a_value=="13") or (int(a_ovalue)<0) or (int(a_ovalue)>25) or (int(b_ovalue)<0) or (int(b_ovalue)>25)):
+                        encrypted_txt.write("Invalid Value Input...!!!")
+                        output_txt.write("Invalid Value Input...!!!")
+                    else:
+                        enc=affine_encrypt(input_txt.value,a_value,b_value)
+                        encrypted_txt.write(enc)
+                        dec=affine_decrypt(enc,a_value,b_value)
+                        output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    a_value=Element("affineaInput").value
+                    a_ovalue=Element("affineaoutput").value
+                    b_value=Element("affinebInput").value
+                    b_ovalue=Element("affineboutput").value
+                    if((a_value=="13") or (int(a_ovalue)<0) or (int(a_ovalue)>25) or (int(b_ovalue)<0) or (int(b_ovalue)>25)):
+                        output_txt.write("Invalid Value Input...!!!")
+                    else:
+                        dec=affine_decrypt(encrypted_txt.value,a_value,b_value)
+                        output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+
+        def caesar(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    a_value=Element("caesaraInput").value
+                    a_ovalue=Element("caesaraoutput").value
+                    if((int(a_ovalue)<0) or (int(a_ovalue)>25)):
+                        encrypted_txt.write("Invalid Value Input...!!!")
+                        output_txt.write("Invalid Value Input...!!!")
+                    else:
+                        enc=caesar_encrypt(input_txt.value,a_value)
+                        encrypted_txt.write(enc)
+                        dec=caesar_decrypt(enc,a_value)
+                        output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    a_value=Element("caesaraInput").value
+                    a_ovalue=Element("caesaraoutput").value
+                    if((int(a_ovalue)<0) or (int(a_ovalue)>25)):
+                        output_txt.write("Invalid Value Input...!!!")
+                    else:
+                        dec=caesar_decrypt(encrypted_txt.value,a_value)
+                        output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+        
+        def columnar(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    key_text=Element("columnar_key").value
+                    enc=columnar_encrypt(input_txt.value,key_text)
+                    encrypted_txt.write(enc)
+                    dec=columnar_decrypt(enc,key_text)
+                    output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    key_text=Element("columnar_key").value
+                    dec=columnar_decrypt(encrypted_txt.value,key_text)
+                    output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+
+        def substitution(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    enc=substitution_encrypt(input_txt.value)
+                    encrypted_txt.write(enc)
+                    dec=substitution_decrypt(enc)
+                    output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    dec=substitution_decrypt(encrypted_txt.value)
+                    output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+        
+        def otp(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    its_key=Element("otp_key")
+                    if(len(input_txt.value)!=len(its_key.value)):
+                        encrypted_txt.write("Length Of the Input and Key Should be Same..!!")
+                        output_txt.write("Length Of the Input and Key Should be Same..!!")
+                    else:
+                        enc=otp_encrypt(input_txt.value,its_key.value)
+                        encrypted_txt.write(enc)
+                        dec=otp_decrypt(enc,its_key.value)
+                        output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    its_key=Element("otp_key")
+                    if(len(encrypted_txt.value)!=len(its_key.value)):
+                        output_txt.write("Length Of the Input and Key Should be Same..!!")
+                    else:
+                        dec=otp_decrypt(encrypted_txt.value,its_key.value)
+                        output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+        
+        def play_fair(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    key_text=Element("play_fair_key").value
+                    enc=play_fair_encrypt(input_txt.value,key_text)
+                    encrypted_txt.write(enc)
+                    dec=play_fair_decrypt(enc,key_text)
+                    output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    key_text=Element("play_fair_key").value
+                    dec=play_fair_decrypt(encrypted_txt.value,key_text)
+                    output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+
+        def Rail_Fence(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    keyit=Element("Rail_FenceInput").value
+                    keyout=Element("Rail_Fenceoutput").value
+                    if(int(keyout)<0):
+                        encrypted_txt.write("Invalid Value Input...!!!")
+                        output_txt.write("Invalid Value Input...!!!")
+                    else:
+                        enc=Rail_Fence_encrypt(input_txt.value,keyit)
+                        encrypted_txt.write(enc)
+                        dec=Rail_Fence_decrypt(enc,keyit)
+                        output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    keyit=Element("Rail_FenceInput").value
+                    keyout=Element("Rail_Fenceoutput").value
+                    if(int(keyout)<0):
+                        output_txt.write("Invalid Value Input...!!!")
+                    else:
+                        dec=Rail_Fence_decrypt(encrypted_txt.value,keyit)
+                        output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+
+        def vigenere(*args, **kwargs):
+            try:
+                if(int(js.call_fun())==2):
+                    input_txt=Element("input-text")
+                    encrypted_txt=Element("encrypted-text")
+                    output_txt=Element("output-text")
+                    keytxt=Element("vigenere_key").value
+                    enc=vigenere_encrypt(input_txt.value,keytxt)
+                    encrypted_txt.write(enc)
+                    dec=vigenere_decrypt(enc,keytxt)
+                    output_txt.write(dec)
+                else:
+                    encrypted_txt=Element("encrypted-text2")
+                    output_txt=Element("output-text2")
+                    keytxt=Element("vigenere_key").value
+                    dec=vigenere_decrypt(encrypted_txt.value,keytxt)
+                    output_txt.write(dec)
+            except Exception as e:
+                js.js_alert("❌ Oprational Error...!!! 😲\n👀 Error Description :- 🔰 "+str(e)+" ❗❗❗ 🙄"+"\n\n😵😵😵 Error Report Issued To The Team Successfully ✔\n🧐🧐🧐 Our Team Will Look Into Issue soon...🤓🤓🤓")
+
+    </py-script>
+
+    <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+</body>
+</html>
