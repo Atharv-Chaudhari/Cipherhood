@@ -1,5 +1,5 @@
 function tasks_onload(){
-    alert('\n                             😎😎😎 Cyberhood Guard 😎😎😎 \n\n 📢 Please select cipher method before you add text...');
+    alert('\n                             😎😎😎 Cyberhood Guard 😎😎😎 \n\n 🖼 Please open this web page on desktop\n 📢 Please select cipher method before you add text...\n');
 }
 
 function validate_affine_a(val_a,n){
