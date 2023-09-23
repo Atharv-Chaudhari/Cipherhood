@@ -1,3 +1,7 @@
+function tasks_onload(){
+    alert('\n                             😎😎😎 Cyberhood Guard 😎😎😎 \n\n 📢 Please select cipher method before you add text...');
+}
+
 function validate_affine_a(val_a,n){
     if(val_a<=25 && val_a>=0){
         if(n==0){
